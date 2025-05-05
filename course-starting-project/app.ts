@@ -39,3 +39,16 @@ console.log(result);
 // const number4 = 2.8;
 
 // const result2 = add(number3, number4); // error!
+
+function add2(n1: number, n2: number, showResult: boolean, phrase: string){
+    const addresult = n1 + n2;
+    if (showResult){
+        console.log(phrase + addresult);
+    } else {
+        return n1 + n2;
+    }
+}
+
+const printResult = true;
+const resultPhrase = 'Result is : '
+const result2 = add2(number1, number2, printResult, resultPhrase);
