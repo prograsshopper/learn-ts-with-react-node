@@ -2,10 +2,16 @@
 //     name: string;
 //     age: number;
 // } // 이렇게 직접적으로 명시하기보단 TS가 추론하게 둬라!
-const person = {
+const person: {
+    name: string;
+    age: number;
+    hobbies: string[];
+    roles: [number, string]
+} = {
     name: 'Maximilian',
     age: 30,
-    hobbies: ['Sports', 'Cooking']
+    hobbies: ['Sports', 'Cooking'],
+    roles: [2, 'author']
 };
 
 let FavoriteActivities: string[] = ['Playing instruments', 'reading'];
@@ -18,3 +24,6 @@ console.log(person);
 for (const hobby of person.hobbies){
     console.log(hobby)
 }
+
+person.roles.push('admin') // 튜플은 갯수가 불변이어야하는데..TS가 이 오류는 못 잡는다.
+// person.roles = [0, 'admin', 'teacher']; // 이거는 잡아낼 수 있음
